@@ -1,0 +1,213 @@
+{% extends "plantilla.html" %} {% block body %}
+
+<div class="container-md row pb-0 mb-0">
+  <div class="col-md-4 bg-dark pb-0 me-0 mt-2 mb-0 rounded-pill">
+    <h2 class="h5 text-start pt-2 pb-2 text-light mb-0 rounded text-uppercase">
+      Usuario en Sesión: {{ nombre }}
+    </h2>
+  </div>
+</div>
+
+{% with messages = get_flashed_messages() %} {% if messages %} {% for message in
+messages %}
+<div
+  class="w-75 text-center align-content-center text-center mx-auto d-block alert alert-light alert-dismissible fade show mt-2"
+  role="alert"
+>
+  <strong class="text-center text-uppercase text-dark">{{ message }}</strong
+  ><br />
+  <strong class="text-center text-uppercase">Usuario: {{ nombre }} </strong>
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button>
+</div>
+{% endfor %} {% endif %} {% endwith %}
+
+<div
+  class="container-md ms-0 me-0 row mt-md-5 mb-5 mt-0 pb-3"
+  style="background-color: #00000098; border-radius: 15px"
+>
+  <div class="col-xl-7 pt-2">
+    <h2 class="h2 text-center pt-2 pb-2 text-light mb-0 rounded fw-bold">
+      Próximos Eventos
+    </h2>
+
+    <table
+      class="table mt-0 table-dark table-striped table-hover table-bordered table-fluid bg-white align-middle table-md"
+    >
+      <thead
+        class="container-fluid text-light fw-bold text-center"
+        style="background-color: #0d6efd"
+      >
+        <tr>
+          <td>DETALLE</td>
+          <td>HORA</td>
+          <td>FECHA</td>
+          <td>LUGAR</td>
+          <td>OPCIONES</td>
+        </tr>
+      </thead>
+      <br />
+      <tbody class="container-fluid text-center h6">
+        {% for i in evento %}
+        <tr>
+          <td>{{i.1}}</td>
+          <td>{{i.2}}</td>
+          <td>{{i.3}}</td>
+          <td>{{i.4}}</td>
+          <td class="row container-fluid m-0 p-0">
+            <a
+              href="/editar/{{i.0}}"
+              class="col btn btn-primary d-sm-grid mb-1 m-1 fw-bold"
+            >
+              <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+              <lottie-player
+                class="text-center align-content-center text-center mx-auto d-block"
+                src="https://assets7.lottiefiles.com/temp/lf20_N3M1CX.json"
+                background="transparent"
+                speed="0.2"
+                style="width: 30px; height: 30px"
+                loop
+                autoplay
+              ></lottie-player>
+
+              Editar
+            </a>
+
+            <a
+              href="/eliminar/{{i.0}}"
+              class="col btn btn-danger d-sm-grid mb-1 m-1 fw-bold"
+            >
+              <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+              <lottie-player
+                class="text-center align-content-center text-center mx-auto d-block"
+                src="https://assets1.lottiefiles.com/packages/lf20_VmD8Sl.json"
+                background="transparent"
+                speed="0.5"
+                style="width: 40px; height: 40px"
+                loop
+                autoplay
+              ></lottie-player>
+
+              Eliminar
+            </a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col-xl-5">
+    <h2 class="h2 text-center pt-5 text-light fw-bold">Consultar Evento</h2>
+
+    <div>
+      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+      <lottie-player 
+        class="text-center align-content-center text-center mx-auto d-block"
+        src="https://assets2.lottiefiles.com/packages/lf20_7snejlbz.json"  
+        background="transparent"  
+        speed="0.4"  
+        style="width: 300px; height: 300px;"  
+        loop  
+        autoplay>
+      </lottie-player>
+    </div>
+
+    <div class="col-fluid-3">
+      <form
+        class="mb-3 container-fluid row justify-content-center"
+        action="/filtroDescripcion"
+        method="post"
+      >
+        <input
+          class="col-7 rounded-pill fw-bold"
+          type="text"
+          name="descripcion"
+          id=""
+          placeholder="Descripción"
+          required
+        />
+        <input
+          class="col-4 ms-2 btn btn-success rounded-pill fw-bold"
+          type="submit"
+          value="Consultar"
+        />
+      </form>
+    </div>
+
+    <div class="col-fluid-3">
+      <form
+        class="mb-3 container-fluid row justify-content-center"
+        action="/filtroHora"
+        method="post"
+      >
+        <input
+          class="col-7 rounded-pill fw-bold"
+          type="time"
+          name="hora"
+          id=""
+          placeholder="Hora"
+          value="08:00:00"
+          required
+        />
+        <input
+          class="col-4 ms-2 btn btn-success rounded-pill fw-bold"
+          type="submit"
+          value="Consultar"
+        />
+      </form>
+    </div>
+
+    <div class="col-fluid-3">
+      <form
+        class="mb-3 container-fluid row justify-content-center"
+        action="/filtroFecha"
+        method="post"
+      >
+        <input
+          class="col-7 rounded-pill fw-bold"
+          type="date"
+          name="fecha"
+          id=""
+          placeholder="Fecha"
+          value="2021-01-01"
+          min="{{today}}"
+          required
+        />
+        <input
+          class="col-4 ms-2 btn btn-success rounded-pill fw-bold"
+          type="submit"
+          value="Consultar"
+        />
+      </form>
+    </div>
+
+    <div class="col-fluid-3">
+      <form
+        class="mb-3 container-fluid row justify-content-center"
+        action="/filtroLugar"
+        method="post"
+      >
+        <input
+          class="col-7 rounded-pill fw-bold"
+          type="text"
+          name="lugar"
+          id=""
+          placeholder="Lugar"
+          required
+        />
+        <input
+          class="col-4 ms-2 btn btn-success rounded-pill fw-bold"
+          type="submit"
+          value="Consultar"
+        />
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

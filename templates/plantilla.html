@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+    <title>Agéndame</title>
+    <link rel="icon" href="../static/img/logoAgenda.png" type="image/png" />
+</head>
+<body style="background-image: url(../static/img/bg-misionTic2022.png);">
+    <div class="container-xl w-md-100" >
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+            <div class="container-fluid">
+
+                <a class="navbar-brand" href="/inicio">
+                    <img src="../static/img/logoAgenda.png" alt="" width="40" height="40">
+                </a>
+
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item nav justify-content-center">
+                        <a class="nav-link h4 active fw-bold text-light" aria-current="page" href="/inicio">Inicio</a>
+                    </li>
+
+                    <li class="nav-item nav justify-content-center">
+                        <a class="nav-link h4 active fw-bold text-light" href="/newevento">Nuevo Evento</a>
+                    </li>
+
+                    <li class="nav-item fw-bold nav justify-content-center align-self-center">
+                        <a class="nav-link, h4 btn btn-danger float-end fw-bold text-light align-self-end" href="/logout">Cerrar Sesión</a>
+                    </li>
+                </div>
+            </div>
+        </nav>
+        {% block body %}
+        
+        {% endblock %}
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+</body>
+
+<footer class="container-fluid mt-0 pt-0 rounded">
+    <div class="row ">
+        <section class="bg-info">
+            <div class="row text-align-middle p-4 border-top" style='background-color: #090B29'>
+                <div class="col-sm-3">
+                    <img src="../static/img/Logo-misionTic2022-250pxW.png" alt="" height="80px" width="150" class="src align-content-center text-center mx-auto d-block">
+                </div>
+                <div class="col-sm-7">
+                    <h4 class='h4 text-center text-light'>Misión Tic 2022 - Ruta 2</h4>
+                    <div class="row w-100">
+                      <div class="col">
+                        <p class="text-center text-light p-0 m-0">
+                          Luis Armando Montilla Andrade
+                        </p>
+                        <p class="text-center text-light p-0 m-0">
+                          Juan Carlos Ramos M.
+                        </p>
+                      </div>
+                      <div class="col">
+                        <p class="text-center text-light p-0 m-0">
+                          Cristian Leandro Pérez Peláez
+                        </p>
+                        <p class="text-center text-light p-0 m-0">
+                          Jhonnatan Mauricio Dioza Zambrano
+                        </p>
+                        <p class="text-center text-light p-0 m-0">
+                          Dana Cotes Cala
+                        </p>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                  <img src="../static/img/UTP_blanco.png" alt="" height="80px" width="150" class="src align-content-center text-center mx-auto d-block">
+                </div>
+            </div>
+        </section>
+    </div>
+</footer>
+</html>

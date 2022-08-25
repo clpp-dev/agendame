@@ -1,0 +1,90 @@
+{% extends "plantilla.html" %} {% block body %}
+
+<div class="row mt-3 mb-5 pt-5 pb-5">
+  <div class="col col-xl-5">
+    <!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <lottie-player
+      class="text-center align-content-center text-center mx-auto d-block"
+      src="https://assets1.lottiefiles.com/packages/lf20_quq5srie.json"
+      background="transparent"
+      speed="0.5"
+      style="width: 300px; height: 300px"
+      loop
+      autoplay
+    ></lottie-player> -->
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <lottie-player 
+      class="text-center align-content-center text-center mx-auto d-block"
+      src="https://assets7.lottiefiles.com/packages/lf20_1cazwtnc.json"  
+      background="transparent"  
+      speed="0.5"  
+      style="width: 350px; height: 350px;"  
+      loop  
+      autoplay>
+    </lottie-player>
+
+  </div>
+
+  <div class="col col-xl-7">
+    <div
+      class="card card-body"
+      style="background-color: #00000098; border-radius: 15px"
+    >
+      <form action="/update/{{evento.0}}" method="POST">
+        <h2 class="text-center text-light pb-3 fw-bold" style="font-size: 45px">
+          Editar Evento
+        </h2>
+
+        <div class="form-group mb-3">
+          <input
+            type="text"
+            name="descripcion"
+            value="{{evento.1}}"
+            class="fw-bold form-control"
+          />
+        </div>
+
+        <div class="form-group mb-3">
+          <input
+            type="time"
+            name="hora"
+            value="{{evento.2}}"
+            step="1"
+            class="fw-bold form-control"
+          />
+        </div>
+
+        <div class="form-group mb-3">
+          <input
+            type="date"
+            name="fecha"
+            value="{{evento.3}}"
+            class="fw-bold form-control"
+          />
+        </div>
+
+        <div class="form-group mb-3">
+          <input
+            type="text"
+            name="lugar"
+            value="{{evento.4}}"
+            class="fw-bold form-control"
+          />
+        </div>
+
+        <div class="form-group mb-3 d-grid">
+          <button
+            type="submit"
+            class="btn btn-primary m-2 p-2 mt-2 pt-2 pb-2 text-light fw-bold fs-4"
+            style="background-color: #5405ef; border-color: #fff"
+          >
+            Actualizar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

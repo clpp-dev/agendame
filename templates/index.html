@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+    <link rel="icon" href="../static/img/logoAgenda.png" type="image/png"/>
+    <title>Agéndame</title>
+</head>
+
+
+{% with messages = get_flashed_messages()  %}
+{% if messages %}
+{% for message in messages %}
+
+<div class="alert alert-info alert-dismissible fade show mb-0" role="alert">
+    <strong>{{ message }}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+<div class="container-fluid mt-0 pt-0 pb-0 shadow pb-0  mb-0 bg-body rounded">
+    <section class="bg-info">
+        <div class="row align-middle p-4" style='background-color: #090B29'>
+            <div class="col-12">
+            <h1 class='h1 text-center text-light pt-3 pb-3' style='font-size: 50px;'>Agéndame</h1>
+            </div>
+        </div>
+    </section>
+
+    <div class="row ">
+        <div class="col-sm-6 p-5" style="background-color: #f705bb;">
+            <h2 class="h2 text-center fw-bold text-light">¿Tienes cuenta?</h2>
+            <div>
+              <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+              <lottie-player 
+                class="text-center align-content-center text-center mx-auto d-block"
+                src="https://assets7.lottiefiles.com/packages/lf20_iwlmrnb5.json"  
+                background="transparent"  
+                speed="0.7"  
+                style="width: 300px; height: 300px;"  
+                loop  
+                autoplay>
+              </lottie-player>
+            </div>
+            <div class="d-grid">
+                <a href="/login" class="btn btn-primary pt-3 pb-3 fs-4 fw-bold rounded-pill">¡Inicia Sesión Ahora!</a>
+            </div>
+        </div>
+
+        <div class="col-sm-6 p-5 " style="background-color: #5405ef;">
+            <h2 class="h2 text-center fw-bold text-light">¡Haz parte de nuestros usuarios!</h2>
+            <div>
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                <lottie-player 
+                  class="text-center align-content-center text-center mx-auto d-block" 
+                  src="https://assets2.lottiefiles.com/packages/lf20_edoysgy6.json"  
+                  background="transparent" 
+                  speed="0.4"  
+                  style="width: 300px; height: 300px;"  
+                  loop  
+                  autoplay>
+                </lottie-player>
+            </div>
+
+            <div class="d-grid">
+                <a href="/registro" class="btn btn-primary pt-3 pb-3 fs-4 fw-bold rounded-pill">¡Regístrate Ahora!</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+</body>
+
+<footer class="container-fluid mt-0 pt-0 rounded">
+    <div class="row ">
+        <section class="bg-info">
+            <div class="row text-align-middle p-4 border-top" style='background-color: #090B29'>
+                <div class="col-sm-3">
+                    <img src="../static/img/Logo-misionTic2022-250pxW.png" alt="" height="80px" width="150" class="src align-content-center text-center mx-auto d-block">
+                </div>
+                <div class="col-sm-7">
+                    <h4 class='h4 text-center text-light'>Misión Tic 2022 - Ruta 2</h4>
+                    <div class="row w-100">
+                      <div class="col">
+                        <p class="text-center text-light p-0 m-0">
+                          Luis Armando Montilla Andrade
+                        </p>
+                        <p class="text-center text-light p-0 m-0">
+                          Juan Carlos Ramos M.
+                        </p>
+                      </div>
+                      <div class="col">
+                        <p class="text-center text-light p-0 m-0">
+                          Cristian Leandro Pérez Peláez
+                        </p>
+                        <p class="text-center text-light p-0 m-0">
+                          Jhonnatan Mauricio Dioza Zambrano
+                        </p>
+                        <p class="text-center text-light p-0 m-0">
+                          Dana Cotes Cala
+                        </p>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                  <img src="../static/img/UTP_blanco.png" alt="" height="80px" width="150" class="src align-content-center text-center mx-auto d-block">
+                </div>
+            </div>
+        </section>
+    </div>
+</footer>
+</html>

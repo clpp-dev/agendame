@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/bootstrap.min.css"
+    />
+    <link rel="icon" href="../static/img/logoAgenda.png" type="image/png" />
+    <title>Proyecto Semestral - Agendame</title>
+  </head>
+
+  <body>
+    {% with messages = get_flashed_messages() %} {% if messages %} {% for
+    message in messages %}
+
+    <div
+      class="alert alert-danger alert-dismissible fade show mb-0"
+      role="alert"
+    >
+      <strong>{{ message }}</strong>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    {% endfor %} {% endif %} {% endwith %}
+
+    <div class="container-fluid mt-0 pt-0 shadow pb-0 mb-0 bg-body rounded">
+      <section class="bg-info">
+        <div class="row align-middle p-4" style="background-color: #090B29">
+          <div class="col-12">
+            <h1 class="h1 text-center text-light">Agéndame</h1>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div
+      class="container-fluid row pt-0 m-0 justify-content-center align-items-center vh-100 shadow pt-0 pb-1 mt-0 mb-0 rounded"
+      style="background-color: #ad1086"
+    >
+      <div
+        class="col-md-5 justify-content-lg-center mt-0 mb-0 pb-1 bg-gradient-primary rounded"
+      >
+        <div>
+          <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+          <lottie-player 
+            class="text-center align-content-center text-center mx-auto d-block"
+            src="https://assets7.lottiefiles.com/packages/lf20_iwlmrnb5.json"  
+            background="transparent"  
+            speed="0.7"  
+            style="width: 300px; height: 300px;"  
+            loop  
+            autoplay>
+          </lottie-player>
+        </div>
+
+        <form class="fw-bold" method="post" action="/login">
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              name="email"
+              class="form-control fw-bold"
+              id="floatingInput"
+              placeholder="E-mail"
+            />
+            <label for="floatingInput">E-mail*</label>
+          </div>
+
+          <div class="form-floating">
+            <input
+              type="password"
+              name="password"
+              class="form-control fw-bold"
+              id="floatingPassword"
+              placeholder="Password"
+            />
+            <label for="floatingPassword">Contraseña*</label>
+          </div>
+
+          <div class="d-grid">
+            <button
+              type="submit"
+              class="btn btn-primary mt-2 pt-2 pb-2 fs-5 fw-bold rounded-pill"
+            >
+              Iniciar sesión
+            </button>
+          </div>
+          <p class="text-center link-light p-3">
+            <a class="text-center align-center h5 link-light" href="/"
+              >Volver al Inicio</a
+            >
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+
+  <footer class="container-fluid mt-0 pt-0 rounded">
+    <div class="row">
+      <section class="bg-info">
+        <div
+          class="row text-align-middle p-4"
+          style="background-color: #1e272e"
+        >
+          <div class="col-sm-3">
+            <img
+              src="../static/img/logoSena.png"
+              alt=""
+              height="50px"
+              width="50"
+              class="src align-content-center text-center mx-auto d-block"
+            />
+          </div>
+          <div class="col-sm-7">
+            <h4 class="h4 text-center text-light">
+              Análisis y Desarrollo de Sistemas de Información
+            </h4>
+            <p class="text-center text-light">
+              Por: Daniel Rojas, Cristian Leandro Perez, Marlin orozco
+            </p>
+          </div>
+          <div class="col-sm-2">
+            <h4 class="h4 text-center text-light">Ficha</h4>
+            <h5 class="h5 text-center text-light">2184066</h5>
+          </div>
+        </div>
+      </section>
+    </div>
+  </footer>
+</html>

@@ -1,0 +1,109 @@
+{% extends "plantilla.html" %} {% block body %} {% with messages =
+get_flashed_messages() %} {% if messages %} {% for message in messages %}
+
+<div
+  class="w-75 text-center align-content-center text-center mx-auto d-block alert alert-dismissible fade show mb-0"
+  style="background-color: #00000098; border-radius: 10px"
+  role="alert"
+>
+  <div class="text-center align-content-center text-center mx-auto d-block">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <lottie-player 
+      class="text-center align-content-center text-center mx-auto d-block"
+      src="https://assets8.lottiefiles.com/packages/lf20_ypej3gd9.json"
+      background="transparent"
+      speed="1" 
+      style="width: 300px; height: 300px;" 
+      loop  
+      autoplay>
+  </lottie-player>
+
+  </div>
+  <strong class="text-center text-light fs-3">{{ message }}</strong>
+  <button
+    type="button"
+    class="btn-close text-light"
+    style="background-color: #ff5800"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button>
+</div>
+{% endfor %} {% endif %} {% endwith %}
+
+<div
+  class="container-xl w-md-100 row pt-2 justify-content-center align-items-center rounded"
+>
+  <div class="col-xl-9 mt-5 align-content-center">
+    <form
+      class="mt-6 p-5 mb-5 fw-bold"
+      style="background-color: #00000098; border-radius: 15px"
+      method="post"
+      action="/registroevento"
+    >
+      <h2 class="text-center mb-3 text-light fw-bold" style="font-size: 45px">
+        Nuevo evento
+      </h2>
+
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          name="descripcion"
+          class="form-control"
+          id="floatingInput"
+          placeholder="Descripcion"
+          required
+        />
+        <label for="floatingInput">Descripción</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input
+          type="time"
+          name="hora"
+          class="form-control fw-bold"
+          id="floatingInput"
+          placeholder="Hora"
+          required
+        />
+        <label for="floatingInput">Hora</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input
+          type="date"
+          name="fecha"
+          class="form-control fw-bold"
+          id="floatingInput"
+          placeholder="Fecha"
+          min="{{today}}"
+          required
+        />
+        <label for="floatingInput ">Fecha</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input
+          type="text "
+          name="lugar"
+          class="form-control"
+          id="floatingInput "
+          placeholder="Lugar"
+          required
+        />
+        <label for="floatingInput ">Lugar</label>
+      </div>
+
+      <div class="d-grid">
+        <button
+          type="submit "
+          class="btn btn-primary m-2 p-2 mt-2 pt-2 pb-2 text-light fw-bold fs-4"
+          style="background-color: #5405EF; border-color: #fff"
+        >
+          Agregar Evento
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
