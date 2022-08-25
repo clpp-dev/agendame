@@ -57,7 +57,7 @@ messages %}
           <td>{{i.1}}</td>
           <td>{{i.2}}</td>
           <td>{{i.3}}</td>
-          <td>{{i.4}}</td>
+          <td class="">{{i.4}}</td>
           <td class="row container-fluid m-0 p-0">
             <a
               href="/editar/{{i.0}}"
@@ -73,7 +73,6 @@ messages %}
                 loop
                 autoplay
               ></lottie-player>
-
               Editar
             </a>
 
@@ -91,7 +90,6 @@ messages %}
                 loop
                 autoplay
               ></lottie-player>
-
               Eliminar
             </a>
           </td>
@@ -119,7 +117,7 @@ messages %}
 
     <div class="col-fluid-3">
       <form
-        class="mb-3 container-fluid row justify-content-center"
+        class="mb-3 container-fluid row p-0 justify-content-center"
         action="/filtroDescripcion"
         method="post"
       >
@@ -131,17 +129,18 @@ messages %}
           placeholder="Descripción"
           required
         />
-        <input
+        <button
           class="col-4 ms-2 btn btn-success rounded-pill fw-bold"
           type="submit"
-          value="Consultar"
-        />
+        >
+          Consultar
+        </button>
       </form>
     </div>
 
     <div class="col-fluid-3">
       <form
-        class="mb-3 container-fluid row justify-content-center"
+        class="mb-3 container-fluid row p-0 justify-content-center"
         action="/filtroHora"
         method="post"
       >
@@ -154,17 +153,18 @@ messages %}
           value="08:00:00"
           required
         />
-        <input
-          class="col-4 ms-2 btn btn-success rounded-pill fw-bold"
-          type="submit"
-          value="Consultar"
-        />
+        <button
+        class="col-4 ms-2 btn btn-success rounded-pill fw-bold"
+        type="submit"
+        >
+          Consultar
+        </button>
       </form>
     </div>
 
     <div class="col-fluid-3">
       <form
-        class="mb-3 container-fluid row justify-content-center"
+        class="mb-3 container-fluid row p-0 justify-content-center"
         action="/filtroFecha"
         method="post"
       >
@@ -178,17 +178,18 @@ messages %}
           min="{{today}}"
           required
         />
-        <input
-          class="col-4 ms-2 btn btn-success rounded-pill fw-bold"
-          type="submit"
-          value="Consultar"
-        />
+        <button
+        class="col-4 ms-2 btn btn-success rounded-pill fw-bold"
+        type="submit"
+        >
+          Consultar
+        </button>
       </form>
     </div>
 
     <div class="col-fluid-3">
       <form
-        class="mb-3 container-fluid row justify-content-center"
+        class="mb-3 container-fluid row p-0 justify-content-center"
         action="/filtroLugar"
         method="post"
       >
@@ -200,11 +201,12 @@ messages %}
           placeholder="Lugar"
           required
         />
-        <input
-          class="col-4 ms-2 btn btn-success rounded-pill fw-bold"
-          type="submit"
-          value="Consultar"
-        />
+        <button
+        class="col-4 col-xs-12 ms-2 btn btn-success rounded-pill fw-bold"
+        type="submit"
+        >
+          Consultar
+        </button>
       </form>
     </div>
   </div>
