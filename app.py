@@ -9,6 +9,7 @@ app = Flask(__name__)
 
 # variable global con la fecha actual
 today = date.today()
+print(f"HOYYYYYYYYYYYYYY --- > {today}")
 
 
 # Mysql Connection LOCALHOST
